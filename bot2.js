@@ -49,27 +49,32 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	var input = message.content.toUpperCase();
+
+	let args = input.split('');
 	let prefix = '!';
 
-	if (message.content === (prefix + 'BLAGUE')) { //
+	if (args[0] === (prefix + 'BLAGUE')) { 
+
+		message.reply();
 		
 	}
 	
-	if ( (message.content === (prefix+'MÉTÉO')) || (message.content === (prefix+'METEO')) ) { //
+	if ( (args[0] === (prefix+'MÉTÉO')) || (args[0] === (prefix+'METEO')) ) { //
 		
 	}
 	
-	if (message.content === (prefix+'IMAGE')) { //
+	if (args[0] === (prefix+'IMAGE')) { //
 		
 	}
 	
-	if (message.content === (prefix+'ISS')) { //
+	if (args[0] === (prefix+'ISS')) { //
 		
 	}
 
-	if (message.content === (prefix+'')) { //
+	if (args[0] === (prefix+'MATH')) { //
 		
 	}
+
 	console.log(message);
 });
 
