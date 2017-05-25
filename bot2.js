@@ -31,7 +31,7 @@ bot.on('ready', () => {
 	console.log('I am ready!');
 });
 
-/*
+
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	if (message.content === 'ping') { //parecido a == pero compara el tipo tambien
 		//message.reply('pong');
@@ -43,7 +43,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 bot.on('presenceUpdate', function(oldMember, newMember) {
 	console.log(oldMember.presence, '=>', newMember.presence);
 });
-*/
+
 
 // BLAGUE
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
