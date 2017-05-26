@@ -63,7 +63,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 	}
 	
-	if (args[0] == (prefix+'IMAGE')) { //
+	if (message.content.startsWith(prefix+'IMAGE')) { //
 		/*
 		const embed = new Discord.RichEmbed()
 			.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
