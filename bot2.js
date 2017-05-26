@@ -70,7 +70,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		message.channel.send({embed});
 		*/
 		message.channel.sendMessage("image", {
-			file: "/cat.jpg"
+			file: "http://i.imgur.com/MBUyt0n.png"
 		});
 	}
 	
