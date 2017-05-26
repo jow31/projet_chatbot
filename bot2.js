@@ -64,7 +64,15 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	}
 	
 	if (args[0] === (prefix+'IMAGE')) { //
-		
+		/*
+		const embed = new Discord.RichEmbed()
+			.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
+		message.channel.send({embed});
+		*/
+		message.channel.sendMessage("some text", {
+    		//file: "http://link.to/your.file" // Or replace with FileOptions object
+			file: 'cat.jpg'
+		});
 	}
 	
 	if (args[0] === (prefix+'ISS')) { //
