@@ -71,7 +71,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		*/
 		message.channel.sendMessage("some text", {
     		//file: "http://link.to/your.file" // Or replace with FileOptions object
-			file: 'cat.jpg'
+			file: '/cat.jpg'
 		});
 	}
 	
