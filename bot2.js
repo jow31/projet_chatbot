@@ -63,15 +63,15 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 	}
 	
-	if (args[0] === (prefix+'IMAGE')) { //
+	if (args[0] == (prefix+'IMAGE')) { //
 		/*
 		const embed = new Discord.RichEmbed()
 			.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
 		message.channel.send({embed});
 		*/
-		message.channel.sendMessage("some text", {
+		message.channel.sendMessage("image", {
     		//file: "http://link.to/your.file" // Or replace with FileOptions object
-			file: '/cat.jpg'
+			file: "https://www.google.fr/search?q=cat&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiarOHDro7UAhVHUhQKHaJkD_8Q_AUICigB&biw=681&bih=569#imgrc=Mp6U7RbYNomHIM:"
 		});
 	}
 	
