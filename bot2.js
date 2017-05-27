@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client(); //client est le bot
 
+var axios = require('axios');
+
 var getJSON = require('./blague.js');
 var meteo = require('./meteo.js');
 var image = require('./image.js');
@@ -59,10 +61,18 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 		message.channel.sendMessage('blague');
 		
+		/*
 		var gjson;
 		gjson = getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1') ;
 
 		message.channel.sendMessage(gjson.fact);
+		*/
+		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
+			.then(function(response){
+				message.channel.sendMessage(response.data);
+				//console.log(response.data);
+				//console.log(response.status);
+			});
 		/*
 		$.getJSON( oembed_url, function(data) {
    			jsonFinal = data.fact;
