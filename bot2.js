@@ -59,7 +59,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	if (message.content.toUpperCase().startsWith(prefix+'BLAGUE')) { 
 
 		message.reply('blague');
-
+		/*
 		var joke;
 		$.getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1', function(data) {	
 		
@@ -67,12 +67,15 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		});
 		var obj = JSON.prase(joke);
 		message.reply(obj.fact);
+		*/
+		var json_obj = JSON.parse('Get(https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1');
+		message.reply(json_obj.fact);
+		//console.log("this is the author name: "+json_obj.author_name);    
 		
 	}
 	
 	if ( (args[0] === (prefix+'MÉTÉO')) || (args[0] === (prefix+'METEO')) ) { //
 		
-
 		message.reply('meteo');
 	}
 	
