@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client(); //client est le bot
 
-var blague = require('./blague.js');
+var getJSON = require('./blague.js');
 var meteo = require('./meteo.js');
 var image = require('./image.js');
 var iss = require('./iss.js');
 var math = require('./math.js');
+//var parseString = require();
 
 //const commando = require('discord.js-commando');
 //const bot = new commando.Client(); //come discord client avec plusiers des features
@@ -57,6 +58,19 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
 
 		message.channel.sendMessage('blague');
+		
+		var gjson;
+		gjson = getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1') ;
+
+		message.channel.sendMessage(gjson.fact);
+		/*
+		$.getJSON( oembed_url, function(data) {
+   			jsonFinal = data.fact;
+        	//console.log();
+    	}).done(function() {
+     		message.channel.sendMessage( jsonFinal );
+   		});
+   		*/
 		/*
 		var joke;
 		$.getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1', function(data) {	
