@@ -47,15 +47,14 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 });
 
 
-// BLAGUE
+
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	//var input = message.content.toUpperCase();
-
 	//let args = input.split('');
 	let prefix = '!';
 
-
+	// BLAGUE
 	if (message.content.toUpperCase().startsWith(prefix+'BLAGUE')) { 
 
 		message.reply('blague');
@@ -68,7 +67,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		var obj = JSON.prase(joke);
 		message.reply(obj.fact);
 		*/
-		var json_obj = JSON.parse('Get(https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1');
+		var json_obj = JSON.parse(Get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1'));
 		message.reply(json_obj.fact);
 		//console.log("this is the author name: "+json_obj.author_name);    
 		
@@ -88,6 +87,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		var endpoint = new GalleryEndpoint(client);
 		var image = await endpoint.GetGalleryTagImageAsync("GALLERY_ITEM_ID", "cat");
 		*/
+		/*
 		var https = require('https');
 
 		var options = {
@@ -111,7 +111,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		});
 
 		req.end();
-
+		*/
 		/*
 		message.channel.sendMessage('pong')
 		const embed = new Discord.RichEmbed()
