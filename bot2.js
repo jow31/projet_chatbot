@@ -71,7 +71,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 			.then(function(response){
 				//message.channel.sendMessage(JSON.stringify(response.data,null,4));
 
-				message.channel.sendMessage(response.data.fact);
+				message.channel.sendMessage(response.data[1]);
 				//console.log(response.data);
 				//console.log(response.status);
 			});
