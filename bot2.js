@@ -56,9 +56,17 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	let prefix = '!';
 
 
-	if (args[0] === (prefix + 'BLAGUE')) { 
+	if (message.content.toUpperCase().startsWith(prefix + 'BLAGUE')) { 
 
 		message.reply('blague');
+
+		var joke;
+		$.getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1', function(data) {	
+		
+			joke = data;
+		});
+		var obj = JSON.prase(joke);
+		message.reply(obj.fact);
 		
 	}
 	
