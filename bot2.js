@@ -53,6 +53,8 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	let args = input.split('');
 	let prefix = '!';
 
+	message.reply(args[0]);
+
 	if (args[0] === (prefix + 'BLAGUE')) { 
 
 		message.reply('blague');
