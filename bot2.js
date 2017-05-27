@@ -67,7 +67,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		message.reply(obj.fact);
 		*/
 
-		var json_obj = JSON.parse(blague.Get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1'));
+		//var json_obj = JSON.parse(blague.Get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1'));
 		//message.reply(json_obj.fact);
 		//console.log("this is the author name: "+json_obj.author_name);    
 		
