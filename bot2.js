@@ -66,9 +66,9 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		message.reply('meteo');
 	}
 	
-	if (message.content.startsWith(prefix+'IMAGE')) { //
+	if (input.content.startsWith(prefix+'IMAGE')) { //
 
-	
+		
 		message.reply('image');
 		/*
 		message.channel.sendMessage('pong')
