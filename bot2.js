@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client(); //client est le bot
 
 var axios = require('axios');
+var parser = require('json-parser');
 
 var getJSON = require('./blague.js');
 var meteo = require('./meteo.js');
@@ -70,7 +71,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
 			.then(function(response) {
 				//self.fact = response.data.fact;
-				var resp = JSON.parse(response.data);
+				var resp = parser.parse(response);
 				message.channel.sendMessage(resp.fact);
 
 				//message.channel.sendMessage(response.data[1]);
