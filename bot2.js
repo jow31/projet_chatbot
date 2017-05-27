@@ -66,7 +66,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		message.reply('meteo');
 	}
 	
-	if (input.content.startsWith(prefix+'IMAGE')) { //
+	if (message.content.toUpperCase().startsWith(prefix+'IMAGE')) { //
 
 		
 		message.reply('image');
