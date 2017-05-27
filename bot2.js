@@ -64,13 +64,13 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	}
 	
 	if (input.content.startsWith(prefix+'IMAGE')) { //
-		
+		/*
 		message.channel.sendMessage('pong')
 		const embed = new Discord.RichEmbed()
 			//.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
 			.setImage('http://i.imgur.com/yVpymuV.png')
 		message.channel.send({embed});
-		/*
+		
 		message.channel.sendMessage("image", {
 			file: "http://i.imgur.com/MBUyt0n.png"
 		});
