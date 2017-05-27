@@ -19,6 +19,8 @@ var math = require('./math.js');
 
 bot.login(process.env.DISCORD_TOKEN); //log into server
 
+//ar imgur_client = new ImgurClient("32761395a6538ea");
+
 var express = require('express');
 var app = express();
 
@@ -70,6 +72,35 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 		
 		message.reply('image');
+		/*
+		var client = new ImgurClient("CLIENT_ID");
+		var endpoint = new GalleryEndpoint(client);
+		var image = await endpoint.GetGalleryTagImageAsync("GALLERY_ITEM_ID", "cat");
+		*/
+		var https = require('https');
+
+		var options = {
+		  hostname: 'api.imgur.com',
+		  path: '/3/gallery/search/time/1/?q=cat',
+		  headers: {'Authorization': 'Client-ID 32761395a6538ea'},
+		  method: 'GET'
+		};
+
+		var req = https.request(options, function(res) {
+		  console.log('statusCode:', res.statusCode);
+		  console.log('headers:', res.headers);
+
+		  res.on('data', function(d) {
+		    process.stdout.write(d);
+		  });
+		});
+
+		req.on('error', function(e) {
+		  console.error(e);
+		});
+
+		req.end();
+
 		/*
 		message.channel.sendMessage('pong')
 		const embed = new Discord.RichEmbed()
