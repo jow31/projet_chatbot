@@ -71,7 +71,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
 			.then(function(response) {
 				//self.fact = response.data.fact;
-				var resp = parser.parse(response);
+				var resp = parser.parse(response.data);
 				message.channel.sendMessage(resp.fact);
 
 				//message.channel.sendMessage(response.data[1]);
