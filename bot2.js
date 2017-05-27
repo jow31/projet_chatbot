@@ -50,13 +50,13 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 // BLAGUE
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
-	var input = message.content.toUpperCase();
+	//var input = message.content.toUpperCase();
 
-	let args = input.split('');
+	//let args = input.split('');
 	let prefix = '!';
 
 
-	if (message.content.toUpperCase().startsWith(prefix + 'BLAGUE')) { 
+	if (message.content.toUpperCase().startsWith(prefix+'BLAGUE')) { 
 
 		message.reply('blague');
 
