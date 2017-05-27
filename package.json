@@ -16,6 +16,7 @@
     "jquery": "^3.2.1",
     "require": "^2.4.20",
     "slackbots": "^1.0.2",
+    "stringify": "^5.1.0",
     "xml2js": "^0.4.17",
     "xmlhttprequest": "^1.8.0"
   },
