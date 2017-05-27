@@ -53,7 +53,6 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	let args = input.split('');
 	let prefix = '!';
 
-	message.reply(args[0]);
 
 	if (args[0] === (prefix + 'BLAGUE')) { 
 
@@ -67,7 +66,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		message.reply('meteo');
 	}
 	
-	if (args[0] === (prefix+'IMAGE')) { //
+	if (message.content.startsWith(prefix+'IMAGE')) { //
 
 	
 		message.reply('image');
