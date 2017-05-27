@@ -55,15 +55,20 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 	if (args[0] === (prefix + 'BLAGUE')) { 
 
-		message.reply();
+		message.reply('blague');
 		
 	}
 	
 	if ( (args[0] === (prefix+'MÉTÉO')) || (args[0] === (prefix+'METEO')) ) { //
 		
+
+		message.reply('meteo');
 	}
 	
-	if (input.content.startsWith(prefix+'IMAGE')) { //
+	if (args[0] === (prefix+'IMAGE')) { //
+
+	
+		message.reply('image');
 		/*
 		message.channel.sendMessage('pong')
 		const embed = new Discord.RichEmbed()
@@ -79,11 +84,10 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	
 	if (args[0] === (prefix+'ISS')) { //
 		
-	}
-
-	if (args[0] === (prefix+'MATH')) { //
+		message.reply('iss');
 		
 	}
+
 
 	console.log(message);
 });
