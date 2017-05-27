@@ -56,7 +56,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	// BLAGUE
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
 
-		message.reply('blague');
+		message.channel.sendMessage('blague');
 		/*
 		var joke;
 		$.getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1', function(data) {	
@@ -66,13 +66,8 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		var obj = JSON.prase(joke);
 		message.reply(obj.fact);
 		*/
-		Url='https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1';
-		var Httpreq = new XMLHttpRequest(); // a new request
-    	Httpreq.open("GET",Url,false);
-    	Httpreq.send(null);
-    	//return Httpreq.responseText; 
-		
-		var json_obj = JSON.parse(Httpreq.responseText);
+
+		var json_obj = JSON.parse(blague.Get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1'));
 		message.reply(json_obj.fact);
 		//console.log("this is the author name: "+json_obj.author_name);    
 		
