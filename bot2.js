@@ -53,8 +53,8 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
-	//var input = message.content.toUpperCase();
-	//let args = input.split('');
+	var input = message.content.toUpperCase();
+	let args = input.split('');
 	let prefix = '!';
 
 	// BLAGUE
@@ -75,35 +75,79 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				var resp2 = resp[0].fact;
 				//message.reply(resp2.replace("é","e").replace("è","e").replace("ù","u").replace("à","a").replace("û","u").replace("â","a").replace("ô","o").replace("ç","c"));
 				message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
-				//console.log(JSON.stringify(response.data, null, 4));
-				//resp = JSON.parse(response.data);
-				//message.channel.sendMessage(resp.fact); 
-				
-				//message.channel.sendMessage(response.data[1]);
-				//console.log(response.data);
-				//console.log(response.status);
-			});
-		/*
-		$.getJSON( oembed_url, function(data) {
-   			jsonFinal = data.fact;
-        	//console.log();
-    	}).done(function() {
-     		message.channel.sendMessage( jsonFinal );
-   		});
-   		*/
-		/*
-		var joke;
-		$.getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1', function(data) {	
-		
-			joke = data;
-		});
-		var obj = JSON.prase(joke);
-		message.reply(obj.fact);
-		*/
 
-		//var json_obj = JSON.parse(blague.Get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1'));
-		//message.reply(json_obj.fact);
-		//console.log("this is the author name: "+json_obj.author_name);    
+			});   
+		
+	}
+
+	if (args[0]===('!MÉTÉO') || (args[0]===('!METEO')) ) { //
+		
+		message.reply('meteo');
+		/*
+		var request = new XMLHttpRequest();
+		request.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=3dff382ff1c221c773f53c526d7f0bf8" + apiKey, false);
+		request.send();
+
+		request = JSON.parse(request.responseText);
+
+		console.log(request);
+		console.log(request.weather[0].description);
+		*/
+ 
+
+
+	}
+	
+	if (message.content.toUpperCase().startsWith("!IMAGE")) { //
+
+		
+		message.reply('image');
+		/*
+		var client = new ImgurClient("CLIENT_ID");
+		var endpoint = new GalleryEndpoint(client);
+		var image = await endpoint.GetGalleryTagImageAsync("GALLERY_ITEM_ID", "cat");
+		*/
+		/*
+		var https = require('https');
+
+		var options = {
+		  hostname: 'api.imgur.com',
+		  path: '/3/gallery/search/time/1/?q=cat',
+		  headers: {'Authorization': 'Client-ID 32761395a6538ea'},
+		  method: 'GET'
+		};
+
+		var req = https.request(options, function(res) {
+		  console.log('statusCode:', res.statusCode);
+		  console.log('headers:', res.headers);
+
+		  res.on('data', function(d) {
+		    process.stdout.write(d);
+		  });
+		});
+
+		req.on('error', function(e) {
+		  console.error(e);
+		});
+
+		req.end();
+		*/
+		/*
+		message.channel.sendMessage('pong')
+		const embed = new Discord.RichEmbed()
+			//.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
+			.setImage('http://i.imgur.com/yVpymuV.png')
+		message.channel.send({embed});
+		
+		message.channel.sendMessage("image", {
+			file: "http://i.imgur.com/MBUyt0n.png"
+		});
+		*/
+	}
+	
+	if (args[0] === (prefix+'ISS')) { //
+		
+		message.reply('iss');
 		
 	}
 
