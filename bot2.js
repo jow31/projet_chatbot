@@ -71,12 +71,12 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 			.then(function(response) {
 				
 				var resp = response.data;
-				message.reply("Météo à "+arg[1]+"\n");
-				message.reply("Prévision: " + resp.weather[0].description);
-				message.reply("Temperature: "+resp.main.temp+ "°C");
-				message.reply("Vent : "resp.wind.speed + " m/s");
-				message.reply("Humidité " + resp.main.humidity + " %");
-				message.reply("Pression " + resp.main.pressure + "kPa");
+				message.channel.sendMessage("Météo à "+arg[1]);
+				message.channel.sendMessage("Prévision: " + resp.weather[0].description);
+				message.channel.sendMessage("Temperature: "+resp.main.temp+ "°C");
+				message.channel.sendMessage("Vent : "resp.wind.speed + " m/s");
+				message.channel.sendMessage("Humidité " + resp.main.humidity + " %");
+				message.channel.sendMessage("Pression " + resp.main.pressure + "kPa");
 				//message.reply(resp.weather[0].description);
 				//message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
 
