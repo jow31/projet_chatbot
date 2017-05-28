@@ -41,7 +41,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	
 	var input = message.content.toUpperCase();
 	var args = input.split(" ");
-	//let prefix = '!';
+
 
 	// BLAGUE
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
