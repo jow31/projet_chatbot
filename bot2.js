@@ -70,14 +70,10 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		*/
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
 			.then(function(response) {
-				//self.fact = response.data.fact;
-				//var resp = parser.parse(response.data);
-				//message.channel.sendMessage(JSON.stringify(response.data, null, 4)); //FUNCIONA
-				//var resp=response.data;
-				//var blague=JSON.stringify(response.data, null, 4);
+				
 				var resp = response.data;
 				var resp2 = resp[0].fact;
-				message.reply(resp2);
+				message.reply(JSON.stringify(resp2));
 				//console.log(JSON.stringify(response.data, null, 4));
 				//resp = JSON.parse(response.data);
 				//message.channel.sendMessage(resp.fact); 
