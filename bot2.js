@@ -75,8 +75,9 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				//message.channel.sendMessage(JSON.stringify(response.data, null, 4)); //FUNCIONA
 				//var resp=response.data;
 				//var blague=JSON.stringify(response.data, null, 4);
-				var resp = JSON.stringify(response.data);
-				message.reply(resp[1]);
+				var resp = response.data;
+				var resp2 = resp[0].fact;
+				message.reply(resp2);
 				//console.log(JSON.stringify(response.data, null, 4));
 				//resp = JSON.parse(response.data);
 				//message.channel.sendMessage(resp.fact); 
