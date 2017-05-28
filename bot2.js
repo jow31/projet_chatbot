@@ -66,22 +66,21 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	//METEO
 	if (args[0]==='!METEO' || args[0]==='!MÉTÉO')  { //
 		
-		message.reply('meteo');
+		//message.reply('meteo');
 		
 		axios.get("http://api.openweathermap.org/data/2.5/weather?q="+args[1]+"&appid=3dff382ff1c221c773f53c526d7f0bf8")
 			.then(function(response) {
 				
 				var resp = response.data;
 				message.channel.sendMessage("Météo à "+arg[1]);
-				/*
 				message.channel.sendMessage("Prévision: " + resp.weather[0].description);
-				message.channel.sendMessage("Temperature: "+resp.main.temp+ "°C");
-				message.channel.sendMessage("Vent : "resp.wind.speed + " m/s");
+				message.channel.sendMessage("Temperature: " +resp.main.temp+ " °C");
+				message.channel.sendMessage("Vent : " + resp.wind.speed + " m/s");
 				message.channel.sendMessage("Humidité " + resp.main.humidity + " %");
-				message.channel.sendMessage("Pression " + resp.main.pressure + "kPa");
+				message.channel.sendMessage("Pression " + resp.main.pressure + " kPa");
 				//message.reply(resp.weather[0].description);
 				//message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
-				*/
+				
 			});
 		
 	}
