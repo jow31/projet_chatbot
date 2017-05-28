@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client(); //client est le bot
+const bot = new Discord.Client(); 
 
 var axios = require('axios');
 var parser = require('json-parser');
@@ -26,8 +26,7 @@ bot.on('ready', () => {
 
 /*
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
-	if (message.content === 'ping') { //parecido a == pero compara el tipo tambien
-		//message.reply('pong');
+	if (message.content === 'ping') { 
 		message.channel.sendMessage('pong'); // Pour envoyer le msg sans @
 	}
 	console.log(message);
@@ -38,7 +37,6 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 	console.log(oldMember.presence, '=>', newMember.presence);
 });
 
-
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	var input = message.content.toUpperCase();
@@ -47,7 +45,6 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 	// BLAGUE
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
-
 		//message.channel.sendMessage('blague');
 
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
@@ -82,8 +79,46 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 	}
 
-	//ar imgur_client = new ImgurClient("32761395a6538ea");
 	
+	
+	if (message.content.toUpperCase().startsWith("!IMAGE")) { //
+		
+		///message.reply('image');
+		/*
+		var endpoint = new GalleryEndpoint(client);
+		var image = await endpoint.GetGalleryTagImageAsync("GALLERY_ITEM_ID", "cat");
+		var https = require('https');
+
+		var options = {
+		  hostname: 'api.imgur.com',
+		  path: '/3/gallery/search/time/1/?q='+args[1],
+		  headers: {'Authorization': 'Client-ID 32761395a6538ea'},
+		  method: 'GET'
+		};
+
+		var req = https.request(options, function(res) {
+		  console.log('statusCode:', res.statusCode);
+		  console.log('headers:', res.headers);
+
+		  res.on('data', function(d) {
+		    process.stdout.write(d);
+		  });
+		});
+
+		req.on('error', function(e) {
+		  console.error(e);
+		});
+
+		req.end();
+		*/
+		
+	}
+	
+	if (message.content.toUpperCase().startsWith('!ISS')) { //
+		
+		//message.reply('iss');
+		
+	}
 });
 
 
