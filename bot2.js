@@ -3,16 +3,13 @@ const bot = new Discord.Client(); //client est le bot
 
 var axios = require('axios');
 var parser = require('json-parser');
-
 var getJSON = require('./blague.js');
-var meteo = require('./meteo.js');
-var image = require('./image.js');
-var iss = require('./iss.js');
 var math = require('./math.js');
-
+//var meteo = require('./meteo.js');
+//var image = require('./image.js');
+//var iss = require('./iss.js');
 
 bot.login(process.env.DISCORD_TOKEN); //log into server
-
 
 
 var express = require('express');
@@ -27,7 +24,7 @@ bot.on('ready', () => {
 	console.log('I am ready!');
 });
 
-
+/*
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	if (message.content === 'ping') { //parecido a == pero compara el tipo tambien
 		//message.reply('pong');
@@ -35,6 +32,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	}
 	console.log(message);
 });
+*/
 
 bot.on('presenceUpdate', function(oldMember, newMember) {
 	console.log(oldMember.presence, '=>', newMember.presence);
@@ -50,7 +48,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	// BLAGUE
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
 
-		message.channel.sendMessage('blague');
+		//message.channel.sendMessage('blague');
 
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
 			.then(function(response) {
@@ -66,7 +64,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	//METEO
 	if (args[0]==='!METEO' || args[0]==='!MÉTÉO')  { //
 		
-		message.reply('meteo');
+		//message.reply('meteo');
 		
 		axios.get("http://api.openweathermap.org/data/2.5/weather?q="+args[1]+"&appid=3dff382ff1c221c773f53c526d7f0bf8")
 			.then(function(response) {
