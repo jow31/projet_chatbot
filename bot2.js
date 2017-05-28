@@ -72,9 +72,9 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 			.then(function(response) {
 				//self.fact = response.data.fact;
 				//var resp = parser.parse(response.data);
-				message.channel.sendMessage(JSON.stringify(response.data, null, 4)); //FUNCIONA
+				//message.channel.sendMessage(JSON.stringify(response.data, null, 4)); //FUNCIONA
 
-				resp = JSON.parse(response);
+				resp = JSON.parse(response.data);
 				message.channel.sendMessage(resp.fact); 
 
 				//message.channel.sendMessage(response.data[1]);
