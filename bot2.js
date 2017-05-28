@@ -73,6 +73,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				
 				var resp = response.data;
 				message.channel.sendMessage("Météo à "+arg[1]);
+				/*
 				message.channel.sendMessage("Prévision: " + resp.weather[0].description);
 				message.channel.sendMessage("Temperature: "+resp.main.temp+ "°C");
 				message.channel.sendMessage("Vent : "resp.wind.speed + " m/s");
@@ -80,7 +81,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				message.channel.sendMessage("Pression " + resp.main.pressure + "kPa");
 				//message.reply(resp.weather[0].description);
 				//message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
-
+				*/
 			});
 		
 	}
