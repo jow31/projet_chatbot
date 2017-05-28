@@ -16,6 +16,8 @@
     "jquery": "^3.2.1",
     "json-parse": "^1.0.3",
     "json-parser": "^1.1.5",
+    "number": "0.0.1",
+    "numbers": "^0.6.0",
     "object-values": "^1.0.0",
     "request": "^2.81.0",
     "require": "^2.4.20",
