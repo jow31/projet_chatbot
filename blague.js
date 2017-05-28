@@ -1,5 +1,6 @@
 
 var getJSON = function(url) {
+        /*
         var resp ;
         var xmlHttp ;
 
@@ -14,6 +15,7 @@ var getJSON = function(url) {
         }
 
         return resp ;
+        */
     
 };
 
