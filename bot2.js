@@ -83,16 +83,16 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	if (args[0]==='!METEO' || args[0]==='!MÉTÉO')  { //
 		
 		message.reply('meteo');
-		/*
+		
 		var request = new XMLHttpRequest();
-		request.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=3dff382ff1c221c773f53c526d7f0bf8" + apiKey, false);
+		request.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+args[1]+"&appid=3dff382ff1c221c773f53c526d7f0bf8", false);
 		request.send();
 
 		request = JSON.parse(request.responseText);
 
 		console.log(request);
 		console.log(request.weather[0].description);
-		*/
+		
 	}
 	
 });
