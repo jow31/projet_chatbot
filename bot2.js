@@ -74,7 +74,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				var resp = response.data;
 				var resp2 = resp[0].fact;
 				//message.reply(resp2.replace("é","e").replace("è","e").replace("ù","u").replace("à","a").replace("û","u").replace("â","a").replace("ô","o").replace("ç","c"));
-				message.reply(resp2).replace(/'/g,"&#039;").replace(/"/,"&quot;");
+				message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
 				//console.log(JSON.stringify(response.data, null, 4));
 				//resp = JSON.parse(response.data);
 				//message.channel.sendMessage(resp.fact); 
