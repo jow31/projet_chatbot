@@ -54,7 +54,7 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	var input = message.content.toUpperCase();
-	let args = input.split(' ');
+	var args = input.split(" ");
 	//let prefix = '!';
 
 	// BLAGUE
@@ -80,7 +80,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 	}
 
-	if (args[0]===('!MÉTÉO') || (args[0]===('!METEO')) ) { //
+	if ( (args[0]=='!MÉTÉO') || (args[0]=='!METEO') ) { //
 		
 		message.reply('meteo');
 		/*
