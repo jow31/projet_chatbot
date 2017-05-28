@@ -54,8 +54,8 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	var input = message.content.toUpperCase();
-	let args = input.split('');
-	let prefix = '!';
+	let args = input.split(' ');
+	//let prefix = '!';
 
 	// BLAGUE
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
