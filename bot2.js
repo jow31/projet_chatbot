@@ -54,7 +54,7 @@ bot.on('presenceUpdate', function(oldMember, newMember) {
 bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va excecuter => {}
 	
 	var input = message.content.toUpperCase();
-	//var args = input.split(" ");
+	var args = input.split(" ");
 	//let prefix = '!';
 
 	// BLAGUE
@@ -79,11 +79,11 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 			});   
 		
 	}
-	/*
+	
 	if (args[0]==='!METEO')  { //
 		
 		message.reply('meteo');
-		
+		/*
 		var request = new XMLHttpRequest();
 		request.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=3dff382ff1c221c773f53c526d7f0bf8" + apiKey, false);
 		request.send();
@@ -92,9 +92,9 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 		console.log(request);
 		console.log(request.weather[0].description);
-
+		*/
 	}
-	*/
+	
 });
 
 
