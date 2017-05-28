@@ -9,21 +9,11 @@ var meteo = require('./meteo.js');
 var image = require('./image.js');
 var iss = require('./iss.js');
 var math = require('./math.js');
-//var parseString = require();
-
-//const commando = require('discord.js-commando');
-//const bot = new commando.Client(); //come discord client avec plusiers des features
-
-
-// Every command needs to be in a group
-//bot.registry.registerGroup('requetes', 'Requetes');
-//bot.registry.registerDefaults(); //register defaults commands as help
-//bot.registry.registerCommandsIn(__dirname + "/commands");
 
 
 bot.login(process.env.DISCORD_TOKEN); //log into server
 
-//ar imgur_client = new ImgurClient("32761395a6538ea");
+
 
 var express = require('express');
 var app = express();
@@ -61,23 +51,16 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 	if (message.content.toUpperCase().startsWith("!BLAGUE")) { 
 
 		message.channel.sendMessage('blague');
-		
-		/*
-		var gjson;
-		gjson = getJSON('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1') ;
 
-		message.channel.sendMessage(gjson.fact);
-		*/
 		axios.get('https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1')
 			.then(function(response) {
 				
 				var resp = response.data;
 				var resp2 = resp[0].fact;
 				//message.reply(resp2.replace("é","e").replace("è","e").replace("ù","u").replace("à","a").replace("û","u").replace("â","a").replace("ô","o").replace("ç","c"));
-				message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
+				message.channel.sendMessage(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
 
 			});   
-		
 	}
 	
 	if (args[0]==='!METEO' || args[0]==='!MÉTÉO')  { //
@@ -88,14 +71,20 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 			.then(function(response) {
 				
 				var resp = response.data;
-				//var resp2 = resp[0].fact;
-				//message.reply(resp2.replace("é","e").replace("è","e").replace("ù","u").replace("à","a").replace("û","u").replace("â","a").replace("ô","o").replace("ç","c"));
-				message.reply(resp.weather[0].description)
+				message.reply("Météo à "+arg[1]+"\n");
+				message.reply("Prévision: " + resp.weather[0].description);
+				message.reply("Temperature: "+resp.main.temp+ "°C");
+				message.reply("Vent : "resp.wind.speed + " m/s");
+				message.reply("Humidité " + resp.main.humidity + " %");
+				message.reply("Pression " + resp.main.pressure + "kPa");
+				//message.reply(resp.weather[0].description);
 				//message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
 
 			});
 		
 	}
+
+	//ar imgur_client = new ImgurClient("32761395a6538ea");
 	
 });
 
