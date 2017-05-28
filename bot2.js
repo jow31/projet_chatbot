@@ -80,7 +80,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 	}
 
-	if ( (args[0]=='!MÉTÉO') || (args[0]=='!METEO') ) { //
+	if (args[0]==='!METEO')  { //
 		
 		message.reply('meteo');
 		/*
