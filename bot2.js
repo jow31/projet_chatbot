@@ -84,15 +84,16 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 		
 		message.reply('meteo');
 		
+		axios.get("http://api.openweathermap.org/data/2.5/weather?q="+args[1]+"&appid=3dff382ff1c221c773f53c526d7f0bf8")
+			.then(function(response) {
+				
+				var resp = response.data;
+				//var resp2 = resp[0].fact;
+				//message.reply(resp2.replace("é","e").replace("è","e").replace("ù","u").replace("à","a").replace("û","u").replace("â","a").replace("ô","o").replace("ç","c"));
+				message.reply(resp.weather[0].description)
+				//message.reply(resp2.replace(/'/g,"&#039;").replace(/"/,"&quot;"));
 
-		var request = new XMLHttpRequest();
-		request.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+args[1]+"&appid=3dff382ff1c221c773f53c526d7f0bf8", false);
-		request.send();
-
-		request = JSON.parse(request.responseText);
-
-		//console.log(request);
-		message.reply(request.weather[0].description);
+			});
 		
 	}
 	
