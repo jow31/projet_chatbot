@@ -74,7 +74,7 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 				var resp = response.data;
 				message.channel.sendMessage("  ** Météo à " + args[1] + " **");
 				message.channel.sendMessage("Prévision: " + resp.weather[0].description);
-				message.channel.sendMessage("Temperature: " + Number(resp.main.temp)-273 + " °C");
+				message.channel.sendMessage("Temperature: " + parseInt(resp.main.temp)-273 + " °C");
 				message.channel.sendMessage("Vent : " + resp.wind.speed + " m/s");
 				message.channel.sendMessage("Humidité: " + resp.main.humidity + " %");
 				message.channel.sendMessage("Pression: " + resp.main.pressure + " kPa");
