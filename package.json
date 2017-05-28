@@ -19,6 +19,7 @@
     "object-values": "^1.0.0",
     "require": "^2.4.20",
     "slackbots": "^1.0.2",
+    "split": "^1.0.0",
     "stringify": "^5.1.0",
     "tostring": "0.0.1",
     "xml2js": "^0.4.17",
