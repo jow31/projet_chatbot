@@ -95,59 +95,6 @@ bot.on('message', message => {   //A chaque fois qu'un message est envoye; on va
 
 	}
 	*/
-	if (message.content.toUpperCase().startsWith("!IMAGE")) { //
-
-		
-		message.reply('image');
-		/*
-		var client = new ImgurClient("CLIENT_ID");
-		var endpoint = new GalleryEndpoint(client);
-		var image = await endpoint.GetGalleryTagImageAsync("GALLERY_ITEM_ID", "cat");
-		*/
-		/*
-		var https = require('https');
-
-		var options = {
-		  hostname: 'api.imgur.com',
-		  path: '/3/gallery/search/time/1/?q=cat',
-		  headers: {'Authorization': 'Client-ID 32761395a6538ea'},
-		  method: 'GET'
-		};
-
-		var req = https.request(options, function(res) {
-		  console.log('statusCode:', res.statusCode);
-		  console.log('headers:', res.headers);
-
-		  res.on('data', function(d) {
-		    process.stdout.write(d);
-		  });
-		});
-
-		req.on('error', function(e) {
-		  console.error(e);
-		});
-
-		req.end();
-		*/
-		/*
-		message.channel.sendMessage('pong')
-		const embed = new Discord.RichEmbed()
-			//.setImage('https://api.imgur.com/endpoints/gallery#gallery-search');
-			.setImage('http://i.imgur.com/yVpymuV.png')
-		message.channel.send({embed});
-		
-		message.channel.sendMessage("image", {
-			file: "http://i.imgur.com/MBUyt0n.png"
-		});
-		*/
-	}
-	
-	if (args[0] === (prefix+'ISS')) { //
-		
-		message.reply('iss');
-		
-	}
-
 });
 
 
